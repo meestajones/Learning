@@ -1,0 +1,42 @@
+h1 {
+
+  width:300px;
+  margin: auto;
+  text-align: center;
+}
+ul {
+  width: 65%;
+  display: flex;
+  margin: auto;
+  flex-wrap: wrap;
+}
+li {
+  align-content: right;
+  border-radius: 15px;
+  border: 2px solid grey;
+  box-shadow: 3px 3px 2px 1px #888888;
+  width: 126px;
+  height: 25px;
+  display: flex;
+  flex: space-between;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin: 6px;
+  text-transform: full-width;
+}
+li:hover{
+    align-content: right;
+    border-radius: 15px;
+    border: 2px solid grey;
+    box-shadow: 3px 3px 2px 1px #888888;
+    width: 126px;
+    height: 25px;
+    display: flex;
+    flex: space-between;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 6px;
+    text-align: right;
+    background-color:rgba(126,133,128,.4);
+  }
+  li:cursor
