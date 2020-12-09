@@ -1,0 +1,62 @@
+<!--Second practice example on MDN 12/08/2020
+ I was supposed to create a function that draws a rectangle on a canvas that was
+already provided, but I decided to take it to the next level. This actually gives me
+a good idea for a very simple game that I might make in the future! Stay Tuned!
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Functions: Task 2</title>
+    <style>
+      p {
+        color: purple;
+        margin: 0.5em 0;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      canvas {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p>Click the button to draw a rectangle:</p>
+<button type="button" onclick="draw()">Click!</button>
+    <section class="preview">
+
+    </section>
+
+    <canvas width="480" height="320">
+
+    </canvas>
+
+  </body>
+  <script>
+
+
+
+    // Add your code here
+    function draw(){
+let x = Math.floor(Math.random()*480);
+let y = Math.floor(Math.random()*320);
+let width = Math.floor(Math.random()*200);
+let height = Math.floor(Math.random()*200);
+let canvas = document.querySelector('canvas');
+let ctx = canvas.getContext('2d');
+let color = ['green', 'blue', 'yellow', 'red', 'purple', 'orange'];
+let random = Math.floor(Math.random()*color.length);
+let randomColor = color[random];
+ctx.fillStyle=randomColor;
+ctx.fillRect(x, y, width, height);
+}
+    // Don't edit the code below here!
+draw(20,40,200,300);
+    const section = document.querySelector('section');
+  </script>
+
+</html>
