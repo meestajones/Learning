@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Function start</title>
+    <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 250px;
+        background: #eee;
+        box-shadow: 5px 5px 4px 1px rgba(117,113,113,.4);
+      }
+
+      .msgBox p {
+        font-weight: bold;
+        padding-left: 82px;
+        background-position: 25px center;
+        background-repeat: no-repeat;
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
+
+    </style>
+  </head>
+  <body>
+    <button>Display message box</button>
+
+    <script>
+
+function displayMessage(msgText, msgType) {
+  const html = document.querySelector('html');  //selecting the html object (window)
+  const panel = document.createElement('div');  // we are creating a div element
+  panel.setAttribute('class', 'msgBox');        // giving that div the class name 'msgBox'
+  html.appendChild(panel);                      // and we are placing that div into the html document
+
+  const msg = document.createElement('p');     //creating a p element
+  msg.textContent = msgText;   // adding text to the p element
+  panel.appendChild(msg);                      // adding the p element as a sibling to the div created earlier
+
+  const closeBtn = document.createElement('button'); //creating a button element that will delete
+  closeBtn.textContent='x';                          //the previous elements
+  panel.appendChild(closeBtn);
+
+  closeBtn.onclick = function() {               // when the 'x' is clicked, deletes the div element
+      panel.parentNode.removeChild(panel);      // that we created earlier.
+  }
+if (msgType === 'warning'){
+  msg.style.backgroundImage='url(icons/warning.png)';
+  panel.style.backgroundColor ='rgba(145,0,34,.6)';
+  panel.style.textAlign='right';
+} else if (msgType ==='chat'){
+  msg.style.backgroundImage='url(icons/chat.png)';
+  panel.style.backgroundColor = 'aqua';
+  panel.style.textAlign='right';
+} else {
+  msg.style.paddingLeft = '20px';
+}
+}
+const btn = document.querySelector('button');
+btn.onclick = function(){
+  displayMessage('Your inbox is almost full - please delete some emails', 'warning');
+  // displayMessage('Hello Kyle, How are you today?', 'chat');
+};
+    </script>
+  </body>
+</html>
