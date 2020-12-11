@@ -1,0 +1,45 @@
+<!--for this problem I would start by taking the target number
+create a for loop that subtracts one from the target and stores that in a value.
+I would then check the array for that value..
+if the target number minus the iteration exists then I would subtract the
+iteration number from the target number and search for that value in the array.
+if both values add up to be the target number, then return value one and value 2.
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+
+<script type="text/javascript">
+
+function findPairForSum(integers, target) {
+  console.log('We are looking for any two numbers in this array ' + integers + ' that add up to be ' + target);
+    for (let i=0;i<integers.length;i++){
+      if(integers.indexOf(i)!== -1){
+        let x = integers[i];
+        let targetMinusX = target - x;
+        console.log('Potential number found! '+ integers[i] +', Now looking for ' +  targetMinusX);
+        if (integers.indexOf(targetMinusX) === -1){
+          console.log(targetMinusX + ' Not Found, moving to the next...');
+        } else {
+          let pair = [integers[i], targetMinusX]
+          if (pair[0]+pair[1]===target){
+            console.log(' Matching Pair Found!' + pair);
+            return pair;
+                    }
+        }
+      }
+    }
+}
+
+// example
+findPairForSum([1, 3, 5, 6, 7, 9, 10, 12], 14);
+findPairForSum([21,54,23,97,14,9,8,5,17,35,64,19,48,25,37,53,81,92,67,51], 173);
+</script>
+</body>
+
+</html>
