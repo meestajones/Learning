@@ -1,0 +1,34 @@
+<!-- with this lesson I experimented with the different ways to add events and
+event listeners, learned that it's terrible practice to use inline events,
+and also that there is a hidden value assigned to every event, that logs everything about
+what was occuring when that event took place.
+-->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Event Handlers</title>
+  </head>
+  <body>
+    <button>Change Color</button>
+
+
+
+    <script type="text/javascript">
+
+      const btn = document.querySelector('button');
+
+      function random(number){
+        return Math.floor(Math.random() * (number+1));
+      }
+      function changeColor(e) {
+        const randomColor = 'rgba('+random(255)+','+random(255)+','+random(255)+','+random(10)/10+')';
+        e.target.style.backgroundColor = randomColor;
+      }
+      btn.onclick = changeColor;
+
+
+    </script>
+  </body>
+</html>
