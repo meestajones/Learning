@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Fizz Buzz Challenge</title>
+  </head>
+  <button type="button" name="button" onclick=(fizzBuzz())>Run FizzBuzz!</button>
+  <body>
+    <script type="text/javascript">
+         // the goal here is to create a function that prints the numbers from 1 to 100
+         // but for numbers that are multiples of 3, print Fizz
+         // for numbers that are multiples of 5, print Buzz,
+         // and for numbers that are multiples of 3 and 5 print FizzBuzz
+
+         function fizzBuzz(){
+
+           for (let i=1;i<101;i++){
+             if(i % 3 === 0 && i % 5 === 0){
+               console.log('FizzBuzz!') //multiples of both 3 and 5 will say FizzBuzz!
+           } else if(i % 5 === 0){
+               console.log('Buzz!'); //multiples of 5 will say buzz!
+           } else if(i % 3 === 0){
+               console.log('Fizz!'); //multiples of 3 will say fizz!
+           } else {
+              console.log(i); // will log all other numbers besides multiples of 3 and 5
+           }
+           }
+         }
+
+    </script>
+  </body>
+</html>
