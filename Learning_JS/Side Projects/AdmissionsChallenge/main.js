@@ -1,10 +1,10 @@
-//for this problem I would start by taking the target number
+/* for this problem I would start by taking the target number
 create a for loop that subtracts one from the target and stores that in a value.
 I would then check the array for that value..
 if the target number minus the iteration exists then I would subtract the
 iteration number from the target number and search for that value in the array.
 if both values add up to be the target number, then return value one and value 2.
-
+*/
 
 
 function findPairForSum(integers, target) {
@@ -24,5 +24,5 @@ function findPairForSum(integers, target) {
 
 }
 
-// example
+// example array and target number 
 findPairForSum([3, 34, 4, 12, 5, 2], 9);
