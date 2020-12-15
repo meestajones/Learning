@@ -2,7 +2,6 @@ const input = document.querySelector('input');
 const list = document.querySelector('ol');
 const btn = document.querySelector('button');
 btn.addEventListener('click', newListItem);
-
 function newListItem() {
     const newItem = document.createElement('li');
     const closeBtn = document.createElement('span');
@@ -11,9 +10,8 @@ function newListItem() {
     input.value = '';
     closeBtn.textContent = 'X';
     newItem.appendChild(closeBtn);
-    closeBtn.addEventListener('click', removeItem);
-    function removeItem(){
+    closeBtn.addEventListener('click', function(){
       list.removeChild(this.parentNode);
       newItem.removeChild(this);
-}
+});
 }
