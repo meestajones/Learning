@@ -1,0 +1,33 @@
+h2 {
+  position: relative;
+  text-align: center;
+  width:100%;
+  padding: 20px;
+}
+.container {
+  padding-top:20px;
+  position: relative;
+  margin:auto;
+  width: 50%;
+  transform:translateX(25%);
+}
+ol {
+  transform: translateX(-25%);
+
+
+
+
+}
+li {
+  font-size: 1.2rem;
+  margin: 4px;
+  border-radius: 10px;
+  background-color: #ccc;
+  width: 100%;
+  transform: translateX(-100%;);
+  padding:10px;
+  padding-left: 40px;
+}
+li span {
+    float: right;
+}
