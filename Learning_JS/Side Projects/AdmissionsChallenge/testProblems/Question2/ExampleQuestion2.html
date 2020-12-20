@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Admissions Challenge</title>
+  </head>
+  <body>
+  <script>
+  /*for this problem I would start by taking the target number
+  create a for loop that subtracts one from the target and stores that in a value.
+  I would then check the array for that value..
+  if the target number minus the iteration exists then I would subtract the
+  iteration number from the target number and search for that value in the array.
+  if both values add up to be the target number, then return value one and value 2.
+*/
+
+let pairs ='';
+
+  function findPairForSum(integers, target) {
+      for (let i=0;i<integers.length;i++){
+        if(integers.indexOf(i)!== -1){
+          console.log(integers[i] + ' : at index ' + i );
+          let x = integers[i];
+          let targetMinusX = target - x;
+          console.log('looking for ' + targetMinusX);
+          if(integers.indexOf(targetMinusX) !== -1){
+            pairs += [integers[i],' + ',targetMinusX, ' = ', target, ' , '];
+            if (pairs[0]+pairs[1]===target){
+              console.log(pairs);
+              console.log('We found ' + pairs.length/2 + ' pairs!');
+
+          } else {
+            console.log(targetMinusX + ' Not found, moving to the next.');
+            }
+            }
+          }console.log(pairs.split(' '));
+        }
+      }
+let pairs1 = '';
+      function findPair(integers, target) {
+        for(let i=0;i<integers.length;i++){
+          // look at the first number in the array and subtract that from target
+          let x = target - integers[i];
+          console.log(target + ' minus ' + integers[i] + ' = ' +x);
+          if(integers.indexOf(x)!== -1){
+            pairs1 += [x, integers[i], ' '];
+            console.log('Pair Found! ' + x + ' and '+ integers[i]);
+          } else {
+            console.log(x + ' not found, looking for the next.');
+          }
+          console.log(pairs1);
+        }
+
+      }
+
+  // example array and target number
+  // findPairForSum([3, 34, 4, 12, 5, 2], 9);
+</script>
+  </body>
+</html>

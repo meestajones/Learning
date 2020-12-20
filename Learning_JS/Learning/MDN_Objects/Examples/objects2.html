@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Working with constructors</title>
+  </head>
+  <body>
+
+    <label for="fName">First Name:</label>
+    <input type="text" name="fName" id="fName">
+    <label for="lName">Last Name:</label>
+    <input type="text" name="lName" id='lName'>
+    <label for="gender">Gender:</label>
+    <select id="gender">
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+      <option value="other">Other</option>
+    </select>
+    <label for="age">Age:</label>
+    <input type="text" name="age" id="age">
+    <button type="button" name="button">Submit</button>
+    <script type="text/javascript">
+
+    let btn = document.querySelector('button');
+    let fName = document.querySelector('#fName');
+    let lName = document.querySelector('#lName');
+    let gender = document.querySelector('#gender');
+    let age = document.querySelector('#age');
+    let users=[];
+    btn.addEventListener('click', function(){
+      let person3 = new Person(fName.value, lName.value, age.value, gender.value, )
+      users.push(person3);
+      return person3;
+  });
+
+      function Person(first, last, age, gender, interests){
+        this.name = {
+          first: first,
+          last: last
+        };
+        this.age = age;
+        this.gender = gender;
+        this.interests = interests;
+        this.greeting = function() {
+          alert(`Hello! my name is ${this.name.first}`);
+        };
+
+        this.bio = function() {
+          let string = this.name.first + ' is ' + this.age + ' years old. ';
+          if(this.gender === 'm' || this.gender === 'M' || this.gender === 'Male' || this.gender === 'male'){
+            string += 'He enjoys ';
+          } else if(this.gender === 'f' || this.gender === 'F' || this.gender === 'female' || this.gender === 'Female'){
+           string += 'She enjoys ';
+         } else {
+           string += 'They enjoy ';
+         }
+          if(this.interests.length === 1){
+            string+= this.interests[0] + '.';
+          } else if (this.interests.length === 2){
+            string+= this.interests[0] + ' and ' + this.interests[1] + '.';
+          } else if (this.interests.length>2){
+          for(i=0;i<this.interests.length;i++){
+            if(i<this.interests.length-2){
+              string += this.interests[i] + ', ';
+            } else if(i<this.interests.length-1){
+              string += this.interests[i];
+            } else {
+              string +=  ' and ' + this.interests[i] + '.';
+            }
+          }
+        };
+        alert(string);
+      }
+}
+      let person1 = new Person('Kyle', 'Jones', 31, 'male', ['skateboarding', 'snowboarding', 'music', 'working out', 'watching sports']);
+
+
+    </script>
+  </body>
+</html>
