@@ -12,13 +12,18 @@
     <input type="text" name="lName" id='lName'>
     <label for="gender">Gender:</label>
     <select id="gender">
-      <option value="female">Female</option>
-      <option value="male">Male</option>
-      <option value="other">Other</option>
+      <option value="Female">Female</option>
+      <option value="Male">Male</option>
+      <option value="Other">Other</option>
     </select>
     <label for="age">Age:</label>
     <input type="text" name="age" id="age">
     <button type="button" name="button">Submit</button>
+    <div class="users">
+      <ol>
+
+      </ol>
+    </div>
     <script type="text/javascript">
 
     let btn = document.querySelector('button');
@@ -26,11 +31,19 @@
     let lName = document.querySelector('#lName');
     let gender = document.querySelector('#gender');
     let age = document.querySelector('#age');
+    let list = document.querySelector('ol');
     let users=[];
     btn.addEventListener('click', function(){
-      let person3 = new Person(fName.value, lName.value, age.value, gender.value, )
-      users.push(person3);
-      return person3;
+      let person = new Person(fName.value, lName.value, age.value, gender.value, )
+      users.push(person);
+      for(i=0;i<users.length;i++){
+        let createItem = document.createElement('li');
+        createItem.textContent = 'Name: '+ users[i]['name']['first'] + ' ' + users[i]['name']['last'] + ', Age:' + users[i]['age'] + ', Gender: ' + users[i]['gender'] + '.';
+        console.log(users[i]['name']);
+                list.appendChild(createItem);
+                createItem.textContent = '';
+      } // I left off here because I wasn't able to get the string of createItem to only display the current users information
+        // instead it kept printing off the entire array's information. but at least I'm on the right path!
   });
 
       function Person(first, last, age, gender, interests){
